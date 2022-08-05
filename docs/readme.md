@@ -34,8 +34,10 @@ Dependencies are listed as below:
 * dflow python package
 * ASE python package
 * Pandas
-* A image containing these package
+* A image containing these package (Pull franklalalala/py_autorefiner)
 * A remote containing executable Gaussian, xTB, ABCluster softerware
+
+Password in test files will be deleted in 3 days.
 
 ## Modules
 
