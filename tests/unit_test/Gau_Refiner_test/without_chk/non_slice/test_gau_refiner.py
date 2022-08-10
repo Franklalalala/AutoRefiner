@@ -20,9 +20,9 @@ dispatcher_executor = DispatcherExecutor(
         'remote_root': r'/home/mkliu/test_dpdispatcher/',
         'batch_type': 'Torque',
         'remote_profile': {
-            "hostname": "219.245.39.76",
-            "username": "mkliu",
-            "password": "mkliu123",
+            "hostname": "",
+            "username": "",
+            "password": "",
             'port': 22
         }
     },

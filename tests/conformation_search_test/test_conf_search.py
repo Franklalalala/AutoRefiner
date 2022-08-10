@@ -13,14 +13,14 @@ from dflow.python import OP, OPIO, Artifact, OPIOSign, PythonOPTemplate, upload_
 upload_packages.append(r'H:\dflow\AutoRefiner\src\autorefiner')
 upload_packages.append(r'D:\Anaconda\envs\dflow\Lib\site-packages\ase')
 dispatcher_executor = DispatcherExecutor(
-    image="python_diy_5:3.8",
+    image="franklalalala/py_autorefiner",
     machine_dict={
         'remote_root': r'/home/mkliu/test_dpdispatcher/',
         'batch_type': 'Torque',
         'remote_profile': {
-            "hostname": "219.245.39.76",
-            "username": "mkliu",
-            "password": "mkliu123",
+            "hostname": "",
+            "username": "",
+            "password": "",
             'port': 22
         }
     },
@@ -48,7 +48,7 @@ ABC_template = ABC_Refiner(public_in_para={'num_worker': 4,
                                            'in_fmt': 'inp',
                                            'log_file': 'info.out'
                                            },
-                           image="python_diy_5:3.8",
+                           image="franklalalala/py_autorefiner",
                            dispatcher_executor=dispatcher_executor,
                            local_minima_folder=local_minima_folder,
                            name='init',
@@ -61,7 +61,7 @@ xtb_template = xTB_Refiner(public_in_para={'num_worker': 4,
                                            'out_list': ['xtbopt.log', 'xtbopt.xyz'],
                                            },
                            cutoff_para={'mode': 'rank', 'rank': 6},
-                           image="python_diy_5:3.8",
+                           image="franklalalala/py_autorefiner",
                            dispatcher_executor=dispatcher_executor,
                            name='xtb-tem'
                            )
@@ -74,7 +74,7 @@ gau_template_opt = Gau_Refiner(public_in_para={'num_worker': 2,
                                                'out_list': ['log', 'chk'],
                                                },
                                cutoff_para={'mode': 'rank', 'rank': 4},
-                               image="python_diy_5:3.8",
+                               image="franklalalala/py_autorefiner",
                                dispatcher_executor=dispatcher_executor,
                                name='gau-0-tem',
                                keep_chk=True,
@@ -88,7 +88,7 @@ gau_template_sp = Gau_Refiner(public_in_para={'num_worker': 2,
                                               'out_list': ['log', 'chk'],
                                               },
                               cutoff_para={'mode': 'rank', 'rank': 2},
-                              image="python_diy_5:3.8",
+                              image="franklalalala/py_autorefiner",
                               dispatcher_executor=dispatcher_executor,
                               name='gau-1-tem',
                               keep_chk=True,
